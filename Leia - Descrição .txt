@@ -1,0 +1,26 @@
+1. Qual o nome de seu projeto? 
+FabElectron
+
+2. Quem são os integrantes de seu grupo? 
+André de Marco Toyama; 
+Arthur Sales Rizzo; 
+Lucas Matheus Borges;
+Vitor Sawanaka Vital.
+
+3. Quem é o potencial usuário do seu projeto?
+Estudantes, professores e usuários de sistemas elétricos montados em protoboard.
+
+4. Descreva como vocês imaginam que o projeto vai funcionar quando estiver pronto. Na descrição procurem incluir a perspectiva do usuário. 
+João montou um sistema no protoboard e mediu a corrente que passa por determinada resistência com um multímetro. Porém ele gostaria de saber se este valor é o correto sem tem que recorrer a longos cálculos. Para isso, ele utiliza o programa CalculaEletron e monta o sistema na interface e compara com o sistema montado na prática. Com isso, ele consegue ter o valor da resistência, diferença de potencial e outros valores em alguns clicks. Além disso, ele pode saber se o circuito está montado de forma correta e se realmente vai funcionar.
+
+5. Existe algum produto ou sistema parecido com o que vocês querem fazer?
+
+Cálculo Online de Cores de Resistores > http://www.novaeletronica.com.br/ferramentas_online/cores-de-resistor-online.php
+CircuitLab > https://www.circuitlab.com/editor/
+
+6. Você já tem alguma idéia de que recursos vai usar? 
+Bibliotecas do python, PyQt, livros (tanto de computação como também de física) e professores.
+
+7. Vocês têm algum plano B? Outra idéia caso esta se prove inviável?
+- Jogo sobre o metrô de São Paulo (no caso, poderia inscrever o projeto no concurso de jogos educativos da SPTrans;
+- Plataforma educativa com definições de termos do Python (como um dicionário).
