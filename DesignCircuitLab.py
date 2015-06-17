@@ -444,24 +444,15 @@ class Ui_ResistorLab(QtGui.QWidget):
     
     def teste(self):
         print(self.FirstColor4.currentIndex())
-        self.botao = QtGui.QPushButton()
-        self.botao.setDisabled(True)
-        self.botao.setText('{0}'.format(50))
-        self.botao.setStyleSheet('color: black')
+        
     
     def teste2(self):
         print(self.SecondColor4.currentIndex())
-        self.botao = QtGui.QPushButton()
-        self.botao.setDisabled(True)
-        self.botao.setText('{0}'.format(50))
-        self.botao.setStyleSheet('color: black')
+        
     
     def teste3(self):
-        print(self.ThirdColor4.currentIndex())
-        self.botao = QtGui.QPushButton()
-        self.botao.setDisabled(True)
-        self.botao.setText('{0}'.format(50))
-        self.botao.setStyleSheet('color: black')
+        print(self.ThirdColor4.currentIndex())        
+        
     
     def teste4(self):
         print(self.FourthColor4.currentIndex())        
