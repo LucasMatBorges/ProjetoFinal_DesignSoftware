@@ -1,15 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'DesignCircuit.ui'
-#
-# Created: Mon Jun 15 09:47:52 2015
-#      by: PyQt4 UI code generator 4.10.4
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt4 import QtCore, QtGui
 import sys
-ok="teste"
+total=0
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -172,6 +165,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         font.setFamily(_fromUtf8("MS UI Gothic"))
         ResistorLab.setFont(font)
         self.ThirdColor5 = QtGui.QComboBox(ResistorLab)
+        self.ThirdColor5.currentIndexChanged.connect(self.Total5)
         self.ThirdColor5.setGeometry(QtCore.QRect(260, 100, 69, 22))
         self.ThirdColor5.setObjectName(_fromUtf8("ThirdColor5"))
         self.ThirdColor5.addItem(_fromUtf8(""))
@@ -185,6 +179,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.ThirdColor5.addItem(_fromUtf8(""))
         self.ThirdColor5.addItem(_fromUtf8(""))
         self.FourthColor5 = QtGui.QComboBox(ResistorLab)
+        self.FourthColor5.currentIndexChanged.connect(self.Total5)
         self.FourthColor5.setGeometry(QtCore.QRect(100, 130, 69, 22))
         self.FourthColor5.setObjectName(_fromUtf8("FourthColor5"))
         self.FourthColor5.addItem(_fromUtf8(""))
@@ -219,7 +214,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.Cores5.setFont(font)
         self.Cores5.setObjectName(_fromUtf8("Cores5"))
         self.FirstColor4 = QtGui.QComboBox(ResistorLab)
-        self.FirstColor4.currentIndexChanged.connect(self.teste)
+        self.FirstColor4.currentIndexChanged.connect(self.Total4)
         self.FirstColor4.setGeometry(QtCore.QRect(120, 240, 69, 22))
         self.FirstColor4.setObjectName(_fromUtf8("FirstColor4"))
         self.FirstColor4.addItem(_fromUtf8(""))
@@ -233,7 +228,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.FirstColor4.addItem(_fromUtf8(""))
         self.FirstColor4.addItem(_fromUtf8(""))
         self.SecondColor4 = QtGui.QComboBox(ResistorLab)
-        self.SecondColor4.currentIndexChanged.connect(self.teste2)
+        self.SecondColor4.currentIndexChanged.connect(self.Total4)
         self.SecondColor4.setGeometry(QtCore.QRect(200, 240, 69, 22))
         self.SecondColor4.setObjectName(_fromUtf8("SecondColor4"))
         self.SecondColor4.addItem(_fromUtf8(""))
@@ -256,7 +251,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.Titulo.setFont(font)
         self.Titulo.setObjectName(_fromUtf8("Titulo"))
         self.ThirdColor4 = QtGui.QComboBox(ResistorLab)
-        self.ThirdColor4.currentIndexChanged.connect(self.teste3)
+        self.ThirdColor4.currentIndexChanged.connect(self.Total4)
         self.ThirdColor4.setGeometry(QtCore.QRect(110, 280, 69, 22))
         self.ThirdColor4.setObjectName(_fromUtf8("ThirdColor4"))
         self.ThirdColor4.addItem(_fromUtf8(""))
@@ -267,8 +262,10 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.ThirdColor4.addItem(_fromUtf8(""))
         self.ThirdColor4.addItem(_fromUtf8(""))
         self.ThirdColor4.addItem(_fromUtf8(""))
+        self.ThirdColor4.addItem(_fromUtf8(""))
+        self.ThirdColor4.addItem(_fromUtf8(""))
         self.FourthColor4 = QtGui.QComboBox(ResistorLab)
-        self.FourthColor4.currentIndexChanged.connect(self.teste4)
+        self.FourthColor4.currentIndexChanged.connect(self.Tolerancia4)
         self.FourthColor4.setGeometry(QtCore.QRect(220, 280, 69, 22))
         self.FourthColor4.setObjectName(_fromUtf8("FourthColor4"))
         self.FourthColor4.addItem(_fromUtf8(""))
@@ -280,6 +277,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.FourthColor4.addItem(_fromUtf8(""))
         self.FourthColor4.addItem(_fromUtf8(""))
         self.FirstColor5 = QtGui.QComboBox(ResistorLab)
+        self.FirstColor5.currentIndexChanged.connect(self.Total5)
         self.FirstColor5.setGeometry(QtCore.QRect(60, 100, 69, 22))
         self.FirstColor5.setObjectName(_fromUtf8("FirstColor5"))
         self.FirstColor5.addItem(_fromUtf8(""))
@@ -293,6 +291,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.FirstColor5.addItem(_fromUtf8(""))
         self.FirstColor5.addItem(_fromUtf8(""))
         self.SecondColor5 = QtGui.QComboBox(ResistorLab)
+        self.SecondColor5.currentIndexChanged.connect(self.Total5)
         self.SecondColor5.setGeometry(QtCore.QRect(160, 100, 69, 22))
         self.SecondColor5.setObjectName(_fromUtf8("SecondColor5"))
         self.SecondColor5.addItem(_fromUtf8(""))
@@ -306,6 +305,7 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.SecondColor5.addItem(_fromUtf8(""))
         self.SecondColor5.addItem(_fromUtf8(""))
         self.FifthColor5 = QtGui.QComboBox(ResistorLab)
+        self.FifthColor5.currentIndexChanged.connect(self.Tolerancia5)
         self.FifthColor5.setGeometry(QtCore.QRect(220, 130, 69, 22))
         self.FifthColor5.setObjectName(_fromUtf8("FifthColor5"))
         self.FifthColor5.addItem(_fromUtf8(""))
@@ -391,14 +391,16 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.SecondColor4.setItemText(8, _translate("ResistorLab", "CINZA", None))
         self.SecondColor4.setItemText(9, _translate("ResistorLab", "BRANCO", None))
         self.Titulo.setText(_translate("ResistorLab", "Resistor Lab", None))
-        self.ThirdColor4.setItemText(0, _translate("ResistorLab", "MARROM", None))
-        self.ThirdColor4.setItemText(1, _translate("ResistorLab", "VERMELHO", None))
-        self.ThirdColor4.setItemText(2, _translate("ResistorLab", "VERDE", None))
-        self.ThirdColor4.setItemText(3, _translate("ResistorLab", "AZUL", None))
-        self.ThirdColor4.setItemText(4, _translate("ResistorLab", "VIOLETA", None))
-        self.ThirdColor4.setItemText(5, _translate("ResistorLab", "CINZA", None))
-        self.ThirdColor4.setItemText(6, _translate("ResistorLab", "DOURADO", None))
-        self.ThirdColor4.setItemText(7, _translate("ResistorLab", "PRATEADO", None))
+        self.ThirdColor4.setItemText(0, _translate("ResistorLab", "PRETO", None))
+        self.ThirdColor4.setItemText(1, _translate("ResistorLab", "MARROM", None))
+        self.ThirdColor4.setItemText(2, _translate("ResistorLab", "VERMELHO", None))
+        self.ThirdColor4.setItemText(3, _translate("ResistorLab", "LARANJA", None))
+        self.ThirdColor4.setItemText(4, _translate("ResistorLab", "AMARELO", None))
+        self.ThirdColor4.setItemText(5, _translate("ResistorLab", "VERDE", None))
+        self.ThirdColor4.setItemText(6, _translate("ResistorLab", "AZUL", None))
+        self.ThirdColor4.setItemText(7, _translate("ResistorLab", "VIOLETA", None))
+        self.ThirdColor4.setItemText(8, _translate("ResistorLab", "DOURADO", None))
+        self.ThirdColor4.setItemText(9, _translate("ResistorLab", "PRATEADO", None))
         self.FourthColor4.setItemText(0, _translate("ResistorLab", "MARROM", None))
         self.FourthColor4.setItemText(1, _translate("ResistorLab", "VERMELHO", None))
         self.FourthColor4.setItemText(2, _translate("ResistorLab", "VERDE", None))
@@ -441,25 +443,212 @@ class Ui_ResistorLab(QtGui.QWidget):
         self.Result4cores.setText(_translate("ResistorLab", "Valor", None))
         self.Result5cores_2.setText(_translate("ResistorLab", "Tolerância", None))
         self.Result5cores_3.setText(_translate("ResistorLab", "Tolerância", None))
-    
-    def teste(self):
-        print(self.FirstColor4.currentIndex())
-        
-    
-    def teste2(self):
-        print(self.SecondColor4.currentIndex())
-        
-    
-    def teste3(self):
-        print(self.ThirdColor4.currentIndex())        
-        
-    
-    def teste4(self):
-        print(self.FourthColor4.currentIndex())        
-        self.Result4cores.setStyleSheet('color: black')        
-        self.Result4cores.setText('{0}'.format(self.FourthColor4.currentIndex()))
-        
 
+    def Total4(self):
+        total1=0
+        cor1 = self.FirstColor4.currentIndex()    
+        if cor1==0:
+            total1+=0
+        elif cor1==1:
+            total1+=10
+        elif cor1==2:
+            total1+=20    
+        elif cor1==3:
+            total1+=30
+        elif cor1==4:
+            total1+=40
+        elif cor1==5:
+            total1+=50        
+        elif cor1==6:
+            total1+=60
+        elif cor1==7:
+            total1+=70        
+        elif cor1==8:
+            total1+=80
+        elif cor1==9:
+            total1+=90
+        total2=0
+        cor2 = self.SecondColor4.currentIndex()            
+        if cor2==0:
+            total2+=0
+        elif cor2==1:
+            total2+=1
+        elif cor2==2:
+            total2+=2
+        elif cor2==3:
+            total2+=3      
+        elif cor2==4:
+            total2+=4
+        elif cor2==5:
+            total2+=5
+        elif cor2==6:
+            total2+=6
+        elif cor2==7:
+            total2+=7
+        elif cor2==8:
+            total2+=8
+        elif cor2==9:
+            total2+=9
+        multiplicador= self.ThirdColor4.currentIndex()
+        if multiplicador==0:
+            mult = 1
+        elif multiplicador==1:
+            mult=10
+        elif multiplicador==2:
+            mult=100
+        elif multiplicador==3:
+            mult=1000
+        elif multiplicador==4:
+            mult=10000
+        elif multiplicador==5:
+            mult=100000
+        elif multiplicador==6:
+            mult=1000000
+        elif multiplicador==7:
+            mult=10000000
+        elif multiplicador==8:
+            mult=0.1
+        elif multiplicador==9:
+            mult=0.01         
+        total = (total1 + total2)*mult
+        self.Result4cores.setStyleSheet('color: black')        
+        self.Result4cores.setText('{0}'.format(total))          
+        
+    def Tolerancia4(self):
+        tolerancia = self.FourthColor4.currentIndex()
+        if tolerancia==0:
+            toleran=1
+        elif tolerancia==1:
+            toleran=2
+        elif tolerancia==2:
+            toleran=0.5
+        elif tolerancia==3:
+            toleran=0.25
+        elif tolerancia==4:
+            toleran=0.1
+        elif tolerancia==5:
+            toleran=0.05
+        elif tolerancia==6:
+            toleran=5
+        elif tolerancia==7:
+            toleran=10  
+        self.Result5cores_3.setStyleSheet('color: black')        
+        self.Result5cores_3.setText('{0}'.format(toleran)) 
+        
+    def Total5(self):
+        total1=0
+        cor1 = self.FirstColor5.currentIndex()    
+        if cor1==0:
+            total1+=0
+        elif cor1==1:
+            total1+=100
+        elif cor1==2:
+            total1+=200    
+        elif cor1==3:
+            total1+=300
+        elif cor1==4:
+            total1+=400
+        elif cor1==5:
+            total1+=500        
+        elif cor1==6:
+            total1+=600
+        elif cor1==7:
+            total1+=700        
+        elif cor1==8:
+            total1+=800
+        elif cor1==9:
+            total1+=900
+        total2=0
+        cor2 = self.SecondColor5.currentIndex()            
+        if cor2==0:
+            total2+=0
+        elif cor2==1:
+            total2+=10
+        elif cor2==2:
+            total2+=20
+        elif cor2==3:
+            total2+=30        
+        elif cor2==4:
+            total2+=40
+        elif cor2==5:
+            total2+=50
+        elif cor2==6:
+            total2+=60
+        elif cor2==7:
+            total2+=70
+        elif cor2==8:
+            total2+=80
+        elif cor2==9:
+            total2+=90
+        total3=0
+        cor3 = self.ThirdColor5.currentIndex()            
+        if cor3==0:
+            total3+=0
+        elif cor3==1:
+            total3+=10
+        elif cor3==2:
+            total3+=20
+        elif cor3==3:
+            total3+=30        
+        elif cor3==4:
+            total3+=40
+        elif cor3==5:
+            total3+=50
+        elif cor3==6:
+            total3+=60
+        elif cor3==7:
+            total3+=70
+        elif cor3==8:
+            total3+=80
+        elif cor3==9:
+            total3+=90
+        multiplicador= self.FourthColor5.currentIndex()
+        if multiplicador==0:
+            mult = 1
+        elif multiplicador==1:
+            mult=10
+        elif multiplicador==2:
+            mult=100
+        elif multiplicador==3:
+            mult=1000
+        elif multiplicador==4:
+            mult=10000
+        elif multiplicador==5:
+            mult=100000
+        elif multiplicador==6:
+            mult=1000000
+        elif multiplicador==7:
+            mult=10000000
+        elif multiplicador==8:
+            mult=0.1
+        elif multiplicador==9:
+            mult=0.01         
+        total = (total1 + total2 + total3)*mult
+        self.Result5cores.setStyleSheet('color: black')        
+        self.Result5cores.setText('{0}'.format(total))          
+        
+    def Tolerancia5(self):
+        tolerancia = self.FifthColor5.currentIndex()
+        if tolerancia==0:
+            toleran=1
+        elif tolerancia==1:
+            toleran=2
+        elif tolerancia==2:
+            toleran=0.5
+        elif tolerancia==3:
+            toleran=0.25
+        elif tolerancia==4:
+            toleran=0.1
+        elif tolerancia==5:
+            toleran=0.05
+        elif tolerancia==6:
+            toleran=5
+        elif tolerancia==7:
+            toleran=10  
+        self.Result5cores_2.setStyleSheet('color: black')        
+        self.Result5cores_2.setText('{0}'.format(toleran)) 
+        
+print("Rodou com sucesso")        
 if __name__	== "__main__":	
 	app	=     QtGui.QApplication(sys.argv)	
 	win	=	Ui_ResistorLab()	
